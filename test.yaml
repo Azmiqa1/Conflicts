@@ -38,7 +38,6 @@ spec:
              ls -la /workspace/argo_wf/project  
              ls -la /workspace/argo_wf/project/hello-frontend  
              cd /workspace/argo_wf/project/hello-frontend  
-             docker build -f /workspace/argo_wf/project/hello-frontend/Dockerfile /workspace/argo_wf/project/hello-frontend -t azmiqa1/hello-frontend:latest
 
     - name: helm-deployment-push-docker-image
       container:
@@ -62,8 +61,6 @@ spec:
             echo "Deploying with Helm"
             helm repo add stable https://charts.helm.sh/stable
             helm repo update
-            helm upgrade --install hello-frontend /workspace/argo_wf/project/hello-frontend/helm-chart --namespace default --create-namespace
 
   volumes:
     - name: workspace-volume
-      emptyDir: {}
