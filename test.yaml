@@ -52,18 +52,5 @@ spec:
         - secretRef:
             name: docker-hub-secret  
 
-<<<<<<< HEAD
-    - name: helm-deployment-deploy-helm
-      container:
-        image: lachlanevenson/k8s-helm:3.6.0
-        command: ["/bin/sh", "-c"]
-        args:
-          - |
-            echo "Deploying with Helm"
-            helm repo add stable https://charts.helm.sh/stable
-            helm repo update
-
-=======
->>>>>>> e4f7131 (test2)
   volumes:
     - name: workspace-volume
